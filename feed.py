@@ -11,7 +11,7 @@ rss_element = xml_tree.Element('rss' , {'version':'2.0' ,
 
 channel_element = xml_tree.SubElement(rss_element,'channel ')
 
-link_prefix = yaml_data ['link']
+link_prefix = yaml_data.get('link', 'https://defaultlink.com')
 
 xml_tree.SubElement(channel_element, 'title').text= yaml_data['title']
 xml_tree.SubElement(channel_element, 'format').text= yaml_data['format']
